@@ -23,13 +23,15 @@ categories = ["asynchronous", "network-programming"]
 
 [dependencies]
 native-tls = "0.2"
-tokio = "1.0"
+# tokio = "1.0"
+tokio = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.37.0" }
 
 [features]
 vendored = ["native-tls/vendored"]
 
 [dev-dependencies]
-tokio = { version = "1.0", features = ["macros", "rt", "rt-multi-thread", "io-util", "net"] }
+tokio = { git = "https://github.com/hft-team/tokio-dpdk.git", branch = "tokio-1.37.0", features = ["macros", "rt", "rt-multi-thread", "io-util", "net"]}
+# tokio = { version = "1.0", features = ["macros", "rt", "rt-multi-thread", "io-util", "net"] }
 cfg-if = "1.0"
 env_logger = { version = "0.10", default-features = false }
 futures = { version = "0.3.0", features = ["async-await"] }
